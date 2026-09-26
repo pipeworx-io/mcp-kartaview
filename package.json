@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-kartaview",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "KartaView — open, crowdsourced street-level imagery.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-7cbbfd26497521bdfe68adde82779ce6977520041c2ef25083642d5f31a24df1",
-    "sourceCommit": "b0fb3c31386cf0256dcf1e2f1b3440435a87ec35"
+    "sourceHash": "v1-7050b4937c252f8b3771534aac6c69140539fd03a70bdf031f968ae194f041a3",
+    "sourceCommit": "1064560fd9dcd0d6fc2606298c2ba244b3a1fbeb"
   }
 }
