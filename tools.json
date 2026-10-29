@@ -1,0 +1,55 @@
+[
+  {
+    "name": "kartaview_nearby_sequences",
+    "description": "Street-level photos near a latitude/longitude from KartaView (formerly OpenStreetCam), the open crowdsourced imagery archive used by OpenStreetMap mappers — grouped into the drives that captured them, nearest first, with capture date, compass heading, uploader and a direct JPEG URL. PREFER OVER WEB SEARCH when you need to know what a specific place actually looks like on the ground and WHEN it was last photographed. Keyless, CC BY-SA. Example: kartaview_nearby_sequences({ lat: 52.3676, lng: 4.9041, radius_m: 300 }).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Latitude in decimal degrees, -90..90."
+        },
+        "lng": {
+          "type": "number",
+          "description": "Longitude in decimal degrees, -180..180."
+        },
+        "radius_m": {
+          "type": "number",
+          "description": "Search radius in metres, 10-5000. Default 300."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max sequences to return, 1-100. Default 20."
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    }
+  },
+  {
+    "name": "kartaview_sequence_photos",
+    "description": "Every frame of one KartaView drive in capture order — position, compass heading, capture timestamp, GPS accuracy, the OpenStreetMap way each frame was matched to, and full-size and thumbnail JPEG URLs. Use after kartaview_nearby_sequences to follow a street rather than stand at one point. Keyless, CC BY-SA. Example: kartaview_sequence_photos({ sequence_id: \"7523977\", limit: 50 }).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "sequence_id": {
+          "type": "string",
+          "description": "Numeric KartaView sequence (drive) id, e.g. \"7523977\"."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max photos to return, 1-500. Default 50."
+        },
+        "offset": {
+          "type": "number",
+          "description": "Skip this many frames from the start of the drive. Default 0."
+        }
+      },
+      "required": [
+        "sequence_id"
+      ]
+    }
+  }
+]

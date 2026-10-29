@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-kartaview",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "KartaView — open, crowdsourced street-level imagery.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-kartaview": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "kartaview"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-kartaview.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/kartaview",
   "pipeworx": {
-    "sourceHash": "v1-4f36c476667b57f413c9800a381f2e601b20bcbf720fd586dabfb5e3f55be7fc",
-    "sourceCommit": "33741fe6d9ba71856e73fa683c73572d1ddf2e93"
+    "mode": "gateway",
+    "slug": "kartaview",
+    "gatewaySlug": "kartaview",
+    "sourceHash": "v1-0ec49ffd714eb97b47eed89c315663c23f5926f858eee4ab30cb988ea32d7e43",
+    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
   }
 }
